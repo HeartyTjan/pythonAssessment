@@ -12,14 +12,23 @@ def get_random():
 
 	return numbers
 
+def get_len(list_of_numbers):
+	
+	list_count = 0
 
+	for number in list(list_of_numbers):
+
+		list_count += 1
+
+	return list_count
+	
 
 numbers = get_random()
 
 print("List of 10 numbers : ", numbers)
 
 
-
+size = get_len(numbers)
 
 total_even = 0
 total_odd = 0
@@ -27,7 +36,7 @@ product = 1
 counter = 1
 total_element = 0
 
-for count in range(10) :
+for count in range(size) :
 
 	total_element += numbers[count] 
 

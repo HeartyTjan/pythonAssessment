@@ -3,11 +3,11 @@ def get_factorial(number):
 	
 	if not isinstance (number, int):
 		
-		print("Enter the correct input")
+		raise ValueError ("Enter the correct input")
 
 	if number < 0 :
 
-		print("invalid input")
+		raise ValueError ("invalid input")
 
 	factorial = 1
 

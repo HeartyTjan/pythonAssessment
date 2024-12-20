@@ -1,8 +1,18 @@
 import unittest
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+from project.evoting.registration import Registration
 
-if __name__ == '__main__':
-    unittest.main()
+
+class TestRegistration(unittest.TestCase):
+    def test_register_candidate_add_one_to_candidate_list(self):
+        registration = Registration()
+        self.assertEqual(0, len(registration.get_candidates()))
+        registration.register_candidate("Name", "President")
+        self.assertEqual(1, len(registration.get_candidates()))
+
+    def test_register_candidate_add_two_candidates(self):
+        registration = Registration()
+        self.assertEqual(0, len(registration.get_candidates()))
+        registration.register_candidate("Name", "President")
+        registration.register_candidate("Name Two", "President")
+        self.assertEqual(2, len(registration.get_candidates()))
